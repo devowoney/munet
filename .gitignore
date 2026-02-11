@@ -3,6 +3,16 @@ __pycache__/
 *.py[codz]
 *$py.class
 
+# ML/Data specific
+data/
+runs/
+checkpoints/
+outputs/
+*.pth
+*.pt
+*.onnx
+wandb/
+
 # C extensions
 *.so
 

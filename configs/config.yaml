@@ -1,0 +1,32 @@
+# Main configuration file for munet
+# Uses Hydra for configuration management
+
+defaults:
+  - model: unet
+  - training: default
+  - _self_
+
+# Experiment settings
+experiment:
+  name: munet_experiment
+  seed: 42
+
+# Data settings
+data:
+  train_input_dir: data/train/input
+  train_target_dir: data/train/target
+  val_input_dir: data/val/input
+  val_target_dir: data/val/target
+  image_size: 256
+  batch_size: 8
+  num_workers: 4
+
+# Output settings
+output:
+  log_dir: runs/${experiment.name}
+  checkpoint_dir: checkpoints/${experiment.name}
+
+# Hardware settings
+hardware:
+  device: cuda  # or "cpu"
+  precision: 32  # or 16 for mixed precision
