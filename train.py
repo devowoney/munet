@@ -204,7 +204,7 @@ def validate(
     return avg_loss, avg_psnr
 
 
-@hydra.main(version_base=None, config_path="../../configs/train", config_name="config")
+@hydra.main(version_base=None, config_path="configs/train", config_name="config")
 def main(cfg: DictConfig):
     """Main training function."""
     logger.info("Configuration:\n" + OmegaConf.to_yaml(cfg))

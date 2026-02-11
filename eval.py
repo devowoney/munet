@@ -142,7 +142,7 @@ def evaluate(
         logger.info(f"Comparison images saved to {output_dir}")
 
 
-@hydra.main(version_base=None, config_path="../../configs/eval", config_name="config")
+@hydra.main(version_base=None, config_path="configs/eval", config_name="config")
 def main(cfg: DictConfig):
     """Main evaluation function."""
     logger.info("Configuration:\n" + OmegaConf.to_yaml(cfg))
