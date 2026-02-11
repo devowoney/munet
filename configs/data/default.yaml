@@ -1,0 +1,7 @@
+# Dataset configuration
+path: data/sim_real.nc
+train_ratio: 0.8
+val_ratio: 0.1
+batch_size: 16
+num_workers: 4
+seed: 42

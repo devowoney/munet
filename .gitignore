@@ -188,6 +188,12 @@ cython_debug/
 #  you could uncomment the following to ignore the entire vscode folder
 # .vscode/
 
+# ML artifacts
+checkpoints/
+runs/
+outputs/
+data/*.nc
+
 # Ruff stuff:
 .ruff_cache/
 

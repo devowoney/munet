@@ -1,0 +1,6 @@
+# Training hyperparameters
+lr: 1.0e-3
+epochs: 100
+device: cpu
+checkpoint_dir: checkpoints
+log_dir: runs
