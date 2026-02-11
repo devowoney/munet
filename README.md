@@ -22,7 +22,6 @@ munet/
 │   ├── training/
 │   │   └── trainer.py      # Training loop with TensorBoard logging
 │   └── utils/              # Shared utilities
-├── tests/                  # pytest test suite
 ├── train.py                # Hydra entry point
 └── pyproject.toml          # Project metadata and dependencies
 ```
@@ -35,12 +34,6 @@ pip install -e ".[dev]"
 
 ## Usage
 
-### Create a dummy dataset for testing
-
-```python
-from munet.data.dataset import create_dummy_dataset
-create_dummy_dataset("data/sim_real.nc", n_samples=1000, height=128, width=128)
-```
 
 ### Train the model
 
@@ -58,10 +51,4 @@ python train.py training.lr=0.0005 training.epochs=50 model.base_features=32
 
 ```bash
 tensorboard --logdir runs
-```
-
-## Tests
-
-```bash
-pytest
 ```
