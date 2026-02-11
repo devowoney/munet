@@ -1,0 +1,5 @@
+defaults:
+  - model: unet
+  - data: default
+  - training: default
+  - _self_

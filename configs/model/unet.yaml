@@ -1,0 +1,5 @@
+# UNet model hyperparameters
+in_channels: 3
+out_channels: 3
+base_features: 64
+bilinear: true
