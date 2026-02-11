@@ -1,0 +1,29 @@
+# Evaluation configuration for sim-to-real mapping
+
+# Model configuration
+model:
+  name: simtoreal
+  n_channels: 3
+  n_classes: 3
+  bilinear: true
+  base_filters: 64
+
+# Dataset configuration
+data:
+  test_dir: data/test
+  img_size: [256, 256]
+  batch_size: 1
+  num_workers: 4
+
+# Evaluation settings
+evaluation:
+  checkpoint_path: checkpoints/best_model.pth
+  output_dir: results
+  save_images: true
+  calculate_metrics: true
+  metrics:
+    - psnr
+    - ssim
+
+# Device configuration
+device: cuda

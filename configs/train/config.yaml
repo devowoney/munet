@@ -1,0 +1,54 @@
+# Training configuration for sim-to-real mapping
+
+# Model configuration
+model:
+  name: simtoreal
+  n_channels: 3
+  n_classes: 3
+  bilinear: true
+  base_filters: 64
+
+# Dataset configuration
+data:
+  train_dir: data/train
+  val_dir: data/val
+  img_size: [256, 256]
+  batch_size: 8
+  num_workers: 4
+  shuffle: true
+
+# Training hyperparameters
+training:
+  epochs: 100
+  learning_rate: 0.0002
+  beta1: 0.5
+  beta2: 0.999
+  weight_decay: 0.0001
+  
+  # Loss weights
+  loss:
+    l1_weight: 1.0
+    perceptual_weight: 0.1
+    
+  # Learning rate schedule
+  scheduler:
+    type: cosine
+    warmup_epochs: 5
+    min_lr: 0.00001
+
+# Checkpoint and logging
+checkpoint:
+  save_dir: checkpoints
+  save_freq: 5
+  save_best: true
+  resume: null
+
+logging:
+  log_dir: logs
+  tensorboard: true
+  log_freq: 10
+  val_freq: 1
+
+# Device configuration
+device: cuda
+seed: 42
