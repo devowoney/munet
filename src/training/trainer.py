@@ -227,7 +227,10 @@ class Trainer:
 
         outputs = self.model(inputs)
 
+        # Clamp outputs to valid image range for visualization
+        outputs_vis = outputs.clamp(0, 1)
+
         # Log images
         self.writer.add_images("samples/input", inputs, epoch)
         self.writer.add_images("samples/target", targets, epoch)
-        self.writer.add_images("samples/output", outputs.sigmoid(), epoch)
+        self.writer.add_images("samples/output", outputs_vis, epoch)

@@ -40,11 +40,12 @@ def get_optimizer(model: nn.Module, cfg: DictConfig):
             betas=tuple(opt_cfg.betas),
         )
     elif opt_cfg.name.lower() == "sgd":
+        momentum = getattr(opt_cfg, "momentum", 0.9)
         return SGD(
             model.parameters(),
             lr=opt_cfg.lr,
             weight_decay=opt_cfg.weight_decay,
-            momentum=0.9,
+            momentum=momentum,
         )
     else:
         raise ValueError(f"Unknown optimizer: {opt_cfg.name}")
